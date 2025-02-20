@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>資訊安全 on KMYen</title>
+        <link>https://localhost:1313/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
+        <description>Recent content in 資訊安全 on KMYen</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>By KMYen</copyright>
+        <lastBuildDate>Fri, 27 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://localhost:1313/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OSCP&#43;-如何&#34;一次&#34;通過OSCP&#43;考試-(含一點點CPENT、LPT心得)</title>
+        <link>https://localhost:1313/p/oscp-plus-exam-experience/</link>
+        <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://localhost:1313/p/oscp-plus-exam-experience/</guid>
+        <description>&lt;h1 id=&#34;摘要&#34;&gt;摘要：
+&lt;/h1&gt;&lt;p&gt;首先感謝&lt;strong&gt;科長、公司團隊&lt;/strong&gt;讓我有這次的機會參加考試，也特別感謝&lt;strong&gt;不可思議的奇蹟、令姊、阿丸、瑩姊、Adam、Bo、schsu、yo豪、以及各個隊友&lt;/strong&gt;在這段時間內的協助以及指導，可以說是沒有這些隊友，我不可能過這個考試，所以大家記得&lt;del&gt;推坑朋友一起花錢考(X)&lt;/del&gt;
+由於網路上已經很多OSCP的考試說明已經在網路上很多了，所以本文主要針對OSCP+的感想以及準備的資源說明為主。&lt;/p&gt;
+&lt;h1 id=&#34;人權&#34;&gt;人權：
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/S1BdJJhBke.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2024-12-27 16_03_31-Clipboard&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;個人背景&#34;&gt;個人背景
+&lt;/h2&gt;&lt;p&gt;因為每個人的能力背景不同，所以有講述個人背景的文章才有參考的價值，
+我是某國立大學的研究所資管所畢業，老實說只會寫簡單的Python，對於C語言等都不太熟悉，大概連腳本小子也不到的程度吧~
+主要工作也跟資訊領域也沒有太大的關係。純粹是有機會進到公司某PartTime性質的團隊，才有機會能跟一群夥伴們一起踏入這個領域去學習。
+而像是ChatGPT的出現，真的讓跨領域的學習門檻降低非常多，也鼓勵大家只要能跨出第一步，在這個AI的時代一定可以學到東西。&lt;/p&gt;
+&lt;h4 id=&#34;學習到考過一年&#34;&gt;學習到考過(一年)：
+&lt;/h4&gt;&lt;p&gt;上課時間：2023-11(和團隊一起上課
+續約時間：2024-06(因為自認還沒準備好，再續約30天來延長考試時間
+考試日期：2024-11(剛好時間要到，而且改版OSCP+，下定決定考試(拒絕拖延症XD)&lt;/p&gt;
+&lt;h1 id=&#34;參考資源&#34;&gt;參考資源：
+&lt;/h1&gt;&lt;h2 id=&#34;考試前&#34;&gt;考試前：
+&lt;/h2&gt;&lt;h3 id=&#34;心得類&#34;&gt;心得類：
+&lt;/h3&gt;&lt;p&gt;在考前都會擔心，甚至覺得自己準備的方向方式是否正確，因此可以多看別人的文章，來幫自己做心理建設。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://eins.li/posts/oscp-secret-sauce/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;揭露 OSCP 所有秘密！-2024-06-28&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com/r/oscp/comments/1f5ojaq/assumed_breach_ad_what_you_may_need_to_know/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;適應新考試：OSCP AD Assumed Breach 情境解析與準備指南-2024-08-31&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://warranty-v01d.pages.dev/posts/how-i-passed-the-oscp/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何在半年內通過OSCP-2024-09-18&lt;/a&gt;
+&amp;ndash;&amp;gt;這幾篇文章很清楚的解釋上課前的準備，以及考試的詳細過程，並且提供了多種工具，很推薦大家多看一下。
+&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=JAnC1DbjwVc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YouTube影片：Ultimate OSCP Guide 2024 - How To Pass The OSCP 2024-2024-05-10&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;oscp課程外工具&#34;&gt;OSCP課程外工具
+&lt;/h3&gt;&lt;h4 id=&#34;建議學的&#34;&gt;建議學的：
+&lt;/h4&gt;&lt;h5 id=&#34;掃描enumeration類&#34;&gt;掃描(Enumeration)類：
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Tib3rius/AutoRecon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tib3rius/AutoRecon&lt;/a&gt;
+&amp;ndash;&amp;gt;考試畢竟是跟時間競賽，所以推薦用這個，可以快速完成許多人工步驟，當然你必須先了解他在做甚麼，並且做不到甚麼，在考試中你才會下人工指令去做更詳細的掃描。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Pennyw0rth/NetExec&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pennyw0rth/NetExec: The Network Execution Tool&lt;/a&gt;
+&amp;ndash;&amp;gt;在OSCP課程內學的是&lt;a class=&#34;link&#34; href=&#34;https://github.com/byt3bl33d3r/CrackMapExec&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CrackMapExec&lt;/a&gt;，但現在已經有更好用的NetExec，建議可以學一下怎麼使用，PS：但我考試時還是使用CrackMapExec&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/DominicBreuker/pspy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;pspy&lt;/a&gt;
+&amp;ndash;&amp;gt;由於考試跟課程中會有排程的題目，而要如何快速找出哪個是可以利用的排程，可以用這個，算是方便很多。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.davila.me/menu/tools-of-the-trade/wpscan&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;wp-scan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://eins.li/posts/make-your-own-wordlist/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;建立自己的字典檔&lt;/a&gt;
+&amp;ndash;&amp;gt;這篇文章蠻推薦的，畢竟自己常常會不確定字典黨會不會lost掉，建一個整合的就不會忘記&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;隧道tunneling類&#34;&gt;隧道(Tunneling)類：
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nicocha30/ligolo-ng&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ligolo-ng&lt;/a&gt;
+&amp;ndash;&amp;gt;在課程中，他會教你怎麼使用chisel，但是建議使用ligolo，因為他會向是建立VPN一樣做tunneling，變得很簡單。(&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=DM1B8S80EvQ&amp;amp;t=20s&amp;amp;pp=ygUJbGlnb2xvLW5n&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教學影片-1&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=qou7shRlX_s&amp;amp;pp=ygUJbGlnb2xvLW5n&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教學影片-2&lt;/a&gt;推薦吃飯做事時可以聽2，實際要操作在按照1的慢慢學)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;其他other類&#34;&gt;其他(other)類：
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/tmux/tmux&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tmux&lt;/a&gt;
+&amp;ndash;&amp;gt;在多台機器內妳可以很方便地進行管理和自訂你的控制台
+&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=Lqehvpe_djs&amp;amp;pp=ygUEVE1VWA%3D%3D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教學影片&lt;/a&gt;&lt;img src=&#34;https://hackmd.io/_uploads/ByyBVpoHye.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;課程&#34;&gt;課程
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://referral.hackthebox.com/mzwErlC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HTB Academy邀請連結&lt;/a&gt;
+&amp;ndash;&amp;gt;光靠OSCP裡面的課程，可能理解的不夠詳細，我會在Academy裡面在詳細去理解實際的運作以及指令怎麼下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;靶機表&#34;&gt;靶機表：
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/spreadsheets/u/0/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/htmlview?pli=1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Lainkusanagi OSCP Like&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit?gid=129517485#gid=129517485&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NetSecFocus Trophy Room&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://wiki.vulnlab.com/intro/recommendations&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vulnlab.com&lt;/a&gt;
+&amp;ndash;&amp;gt;俗話說Practice Make Perfect，以上靶機推薦大家多練習。
+&lt;img src=&#34;https://hackmd.io/_uploads/HyTAmiirJl.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cheatsheet參考&#34;&gt;CheatSheet參考：
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://aditya-3.gitbook.io/oscp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;aditya-3.gitbook.io/oscp&lt;/a&gt;
+&amp;ndash;&amp;gt;建立自己的CheatSheet or MindMap很重要，你可以快速知道自己做了甚麼或甚麼還沒做。
+&amp;ndash;&amp;gt;Google還會有很多CheatSheet可以參考，最重要的是&lt;strong&gt;Make your OWN CheatSheet or MindMap&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;考試後&#34;&gt;考試後：
+&lt;/h2&gt;&lt;h3 id=&#34;報告相關&#34;&gt;報告相關：
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://help.offsec.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方報告規格&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=8Biyy8B5maw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;報告撰寫影片&lt;/a&gt;
+&lt;img src=&#34;https://hackmd.io/_uploads/HJZ3rajSkg.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;其他qa&#34;&gt;其他QA：
+&lt;/h1&gt;&lt;p&gt;Q：OSCP+的加分算變難or變簡單?
+A：因為AD不用Initial Access了(直接給帳密)，而且提權的方式很簡單。所以10分算是送你的，而且每台都有分數。
+Q：OSCP教的是甚麼？
+A：在OSCP的課程裡面會教你如何像是打撲克牌一樣，照某種套路(MindMap)，對每一個可能的方式都去嘗試(Try Harder)，就可以打穿。所以重點是你如何透過他的課程來建立自己的MindMap。&lt;/p&gt;
+&lt;p&gt;Q：CPENT跟OSCP的差異？
+A：先上圖，最近剛上日麻的雀豪，請容我用雀魂的段位或是LOL英雄聯盟的段位來做說明
+&lt;img src=&#34;https://hackmd.io/_uploads/Hy-_UpiBJg.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+&gt;
+老實說，CPENT跟OSCP算是截然不同的考試，CPENT模擬一個企業環境你要在裡面找到你的目標靶機來打，但難度不會太高，OSCP則是給你確定的機器要你取得RCE，用遊戲段未來形容的話，CPENT有點像是大草原上面有好幾個牌桌(英雄聯盟則是段位場)，你要在裡面找到你要打的那幾張牌桌，而對手的水平大概是銅牌場的水準。而在OSCP則是確實的給你牌桌(3台StandAlone，1組AD)你要靠你所學的打牌理論打贏這幾場牌桌(水準大概在金之間，金牌場左右)，以上是我的體感。
+&lt;strong&gt;CPENT be Like：&lt;/strong&gt;(難度在於你要找到你要打哪幾桌)
+&lt;img src=&#34;https://hackmd.io/_uploads/HJJ1uaiHke.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2024-12-27 14_23_07-Clipboard&#34;
+	
+	
+&gt;
+&lt;strong&gt;OSCP be Like：&lt;/strong&gt;(難度在於你學會招數，照著理論打通，不難但你要都知道)
+&lt;img src=&#34;https://hackmd.io/_uploads/SJoxFpjSye.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2024-12-27 14_26_45-Clipboard&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Q：其他QA
+A：歡迎留言或加我LINE討論(lazycpumis)&lt;/p&gt;
+&lt;h3 id=&#34;cpentlpt人權圖&#34;&gt;CPENT、LPT人權圖：
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/HyW5tTjSke.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2024-12-27 14_29_12-Clipboard&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;記得oscpcpentlpt只是開始&#34;&gt;記得OSCP、CPENT、LPT只是開始&amp;hellip;&amp;hellip;
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://youtu.be/6-05YGBR-Hw?si=v-MglVle123N2TDn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Offsec_Rank #OSCP #OSCE #OSEE&lt;/a&gt;
+&lt;img src=&#34;https://hackmd.io/_uploads/HJZKsasSyl.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;最後學累了就聽歌休息吧人生還有很多有趣的事情加油&#34;&gt;最後學累了就聽歌休息吧，人生還有很多有趣的事情，加油
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.offsec.com/offsec/say-try-harder/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.offsec.com/offsec/say-try-harder/&lt;/a&gt;
+&lt;img src=&#34;https://hackmd.io/_uploads/ryukH6oB1g.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;現在聽好了！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;這首獻給所有完成 Offsec 認證的人，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;那些不動搖、不猶豫的人，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;那些更加努力、變得更勇敢的人！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你們不能失敗，不能讓這成為一場空，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你必須更加努力！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Offsec 說要更努力！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;這是取得你的 OSCP 的唯一方法
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你必須比你想像的更努力
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;因為那是 Offsec 的哲學！ X 2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;把頭猛敲在桌子上
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;不敢相信自己陷入如此困境
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;深陷在 Offsec 滲透測試的六英尺深
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;當你在隧道中穿梭和轉向，像挖土一樣撞到地面
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;痛苦和忍耐，孩子，你說你知道它，你活在其中！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;但你必須打破自己的极限
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;當你想要放棄，只要說放棄吧，就放棄吧，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;說 Bob，我真的不明白，答案是什麼？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;他說“忘了吧孩子，這是 Offsec，你必須適應它”。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你想成為巨人還是侏儒，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你想成為 Offsec 認證者還是在外面開發小工具，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;抬起頭，把手指放在那些數字上
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我們這裡有句話，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我們呼吸它，我們活在其中，那就是
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tricia 那惡毒的女人她在你面前大笑！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你在網絡空間被謙卑的人羞辱！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;這條路像馬拉松一樣長，不是短短的 50 米賽跑
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;不想墜落不想失敗不想失去恩典！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;24 小時的測試，想把頭放在枕頭上 –
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;但你現在不能放棄，這是你必須擁抱的挑戰！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;坐直，用那些好牙膏刷牙
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;做一些伏地挺身，喝些咖啡，在臉上潑冷水....
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;然後重新回到比賽中，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;讓世界知道你的名字
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;那 Offsec 認證是黑客名人堂
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;這是無盡的讚揚，所以恢復你的信心，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你已經走了這麼遠，現在停下來只會
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;成為一個巨大的遺憾
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你必須拋棄所有疑慮
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;這考試你不能失敗
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你也不能停止，所以
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;像 Suey，你必須剁碎它！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;像地板，你必須擦乾淨它！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;像 Woodstock，你必須搖滾它！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;振作起來，只要更努力。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我告訴你，你能做到。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;更努力，更努力，更努力，更努力...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;生命如此短暫，所以要全力以赴，你得做到
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;這次滲透測試只是未來事情的一個範例
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;生命如此短暫，在你的生活中你必須得到一些……
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>iPAS 資訊安全工程師-中級 12天準備歷程記錄 &amp; 考古題資源提供</title>
+        <link>https://localhost:1313/p/ipas-security-engineer-exam-prep/</link>
+        <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://localhost:1313/p/ipas-security-engineer-exam-prep/</guid>
+        <description>&lt;h1 id=&#34;ipas資訊安全工程師-中級-12天準備歷程記錄考古題資源提供&#34;&gt;iPAS資訊安全工程師-中級-12天準備歷程記錄&amp;amp;考古題資源提供
+&lt;/h1&gt;&lt;h2 id=&#34;結果pass&#34;&gt;結果：PASS
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/HkbPIHbka.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/HkbPIHbka.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;心得&#34;&gt;心得：
+&lt;/h2&gt;&lt;p&gt;透過考古題可以發現該科考試的範圍極廣，不是短時間內可以準備完成的，而且有讀過法規的相關資安認證的更有優勢，這次有幸能夠在12天內就考過也是運氣好，沒有考太多法規面的東西。
+事後回顧為什麼會過可能是同時也在準備CEH考試的關係，CEH考科跟這邊實務面的東西有許多相似之處，雙方都有各自沒有的範圍。
+PS:&lt;a class=&#34;link&#34; href=&#34;https://hackmd.io/@7ZcmfE2ETz-ntel2Ma6uTg/rJvhYym62&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CEH準備心得筆記&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;歷屆考古題&#34;&gt;歷屆考古題：
+&lt;/h2&gt;&lt;p&gt;iPas_資訊安全規劃實務_中級_歷屆考題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://forms.gle/bXEeyXWP5RtuHxcC7&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://forms.gle/bXEeyXWP5RtuHxcC7&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;iPas_資訊安全防護實務_中級_歷屆考題：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://forms.gle/KRpoLr4sMuXi6EzD7&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://forms.gle/KRpoLr4sMuXi6EzD7&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;錯誤題目檢討&#34;&gt;錯誤題目檢討：
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/spreadsheets/d/1Nj3shzjCJZBqBOhLjRVV2iIYokPLWThtbadLJT9izfE/edit?usp=sharing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://docs.google.com/spreadsheets/d/1Nj3shzjCJZBqBOhLjRVV2iIYokPLWThtbadLJT9izfE/edit?usp=sharing&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;考試deadline&#34;&gt;考試DeadLine
+&lt;/h2&gt;&lt;p&gt;考試日期：112年08月12日（六）
+考試時間：09:00-10:30資訊安全規劃實務；11:00-12:30資訊安全防護實務&lt;/p&gt;
+&lt;h2 id=&#34;準備時間11-days&#34;&gt;準備時間(11 Days)：
+&lt;/h2&gt;&lt;p&gt;0801：iPas_資訊安全規劃實務_中級_歷屆考題-製作完成
+0803：iPas_資訊安全防護實務_中級_歷屆考題-製作完成
+0804：iPas_資訊安全規劃實務_中級_歷屆考題-50%做完
+0805：iPas_資訊安全防護實務-中級_歷屆試題-第一次裸考(正確率66.33%(132/199))
+0806：iPas_資訊安全防護實務-中級_歷屆試題-第一次裸考(正確率53.06%(105/196))
+0807：上班
+0808：白天上班(08-20)、防護實務(錯誤題目-檢討詳解)-複習至109-07
+0809：白天上班(08-20)、防護實務(錯誤題目-檢討詳解)-檢討完成
+0810：白天上班(08-20)、完成歷屆試題重考-第二次、看iThome、了解zero trust
+0811：白天上班(08-20)、完成歷屆試題重考-第三次、看iThome
+0812：考試&lt;/p&gt;
+&lt;h2 id=&#34;cvssv3&#34;&gt;CVSSv3
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;基本矩陣群 (Base metric group)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;攻擊向量 (Attack Vector, AV)
+&lt;em&gt;Network (N)：由網際網路網路進行攻擊&lt;/em&gt;
+Adjacent (A)： 由受限制的網路進行攻擊，如區域網路及藍芽等
+&lt;em&gt;Local (L)：在不連接網路的狀況下進行攻擊&lt;/em&gt;
+Physical (P)：需接觸到實體機器才能進行攻擊&lt;/li&gt;
+&lt;li&gt;攻擊複雜度 (Attack Complexity, AC)
+&lt;em&gt;Low (L)：低，攻擊可被輕易重現&lt;/em&gt;
+High (H)：高，須由攻擊者達成數項條件後才能成功&lt;/li&gt;
+&lt;li&gt;是否需要提權 (Privileges Required, PR)
+&lt;em&gt;None (N)：不需要&lt;/em&gt;
+Low (L)：需要一般使用者權限
+*High (H)：需要管理者權限&lt;/li&gt;
+&lt;li&gt;是否需要使用者操作 (User Interaction, UI)
+&lt;em&gt;None (N)：不需要&lt;/em&gt;
+Required (R)：需要使用者操作某些動作才能讓攻擊成功&lt;/li&gt;
+&lt;li&gt;影響範圍 (Scope, S)
+&lt;em&gt;Unchanged (U) ：僅影響含有漏洞的元件本身&lt;/em&gt;
+Changed (C)：會影響到含有漏洞的元件以外的元件&lt;/li&gt;
+&lt;li&gt;機密性影響 (Confidentiality, C)
+&lt;em&gt;None (N)：無影響&lt;/em&gt;
+Low (L)：攻擊者可以取得機密資料，但無法使用該資料
+*High (H)：攻擊者可以取得機密資料，且可以使用該資料&lt;/li&gt;
+&lt;li&gt;完整性影響(Integrity, I)
+&lt;em&gt;None (N) ：無影響&lt;/em&gt;
+Low (L) ：攻擊者有部分權限以竄改某些資料，對含有漏洞之元件影響較小
+*High (H)：攻擊者有權限竄改所有資料，對含有漏洞之元件有嚴重影響&lt;/li&gt;
+&lt;li&gt;可用性影響 (Availability, A)
+&lt;em&gt;None (N)：無影響&lt;/em&gt;
+Low (L)：可用性受到影響，導致服務或元件仍可被部分取得，或是時好時壞
+*High (H)：可用性受到嚴重影響，導致服務或元件完全不可被取得&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;暫時矩陣群 (Temporal metric group)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;環境矩陣群 (Environmental metric group)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/SJDFl612h.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/SJDFl612h.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;參考資源&#34;&gt;參考資源：
+&lt;/h2&gt;&lt;p&gt;iPAS資訊安全工程師中級筆記
+&lt;a class=&#34;link&#34; href=&#34;https://hackmd.io/@Not/iPASInformationSecuritySpecialist#iPAS%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B8%AD%E7%B4%9A%E7%AD%86%E8%A8%98&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hackmd.io/@Not/iPASInformationSecuritySpecialist#iPAS%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B8%AD%E7%B4%9A%E7%AD%86%E8%A8%98&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>CEH-V11 考試心得 &amp; 題庫資源分享</title>
+        <link>https://localhost:1313/p/ceh-v11-exam-experience/</link>
+        <pubDate>Sat, 12 Aug 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://localhost:1313/p/ceh-v11-exam-experience/</guid>
+        <description>&lt;h1 id=&#34;ceh-v11-考試心得題庫資源分享&#34;&gt;CEH-V11-考試心得&amp;amp;題庫資源分享
+&lt;/h1&gt;&lt;h2 id=&#34;考試成績124125&#34;&gt;考試成績：124/125
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/By_N2SZyT.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/By_N2SZyT.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;PS:敗在IOT Seeker那題，當時在思考是IOT Inspector還是IOT Seeker，如果是我自己應該會用IOT Inspector聽起來比較厲害。&lt;/p&gt;
+&lt;h2 id=&#34;心得&#34;&gt;心得
+&lt;/h2&gt;&lt;p&gt;一直以來對資安這一塊有興趣但又不知道怎麼入門，剛好有幸能有研究所朋友推坑，一起花了五六萬塊來上CEH的課程，整體課程僅有5天(可重聽一次但我沒去)，上完其實能得到的收穫不多，事後發現這一門領域還是要靠自己去學習。&lt;/p&gt;
+&lt;p&gt;近期便買了「HTB Academy」來玩，真的學到蠻多的，在準備Nmap的題目時候「HTB Academy」裡面有一個Module(如下圖)透過裡面實際操作學習後，可以把很多題目變成不是死背而是真的利用到知道怎樣用，非常推薦準備考試的人可以使用(裡面有許多免費課程，可以先從免費的用了之後覺得喜歡再考慮購買)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/HJG60BW1T.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/HJG60BW1T.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/Bko5kI-kT.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/Bko5kI-kT.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;準備方式&#34;&gt;準備方式：
+&lt;/h2&gt;&lt;p&gt;由於我比較懶惰，所以從去年上完課程後只有少數時間做做考古題，有友人大神做了google表單版本的考古題，但Google表單的缺點是我考完400題目後才能確認答不不不之案以及我不能確認答案是否正確(CEH有許多官方答案是錯誤的)&lt;/p&gt;
+&lt;p&gt;因此後來找到一個網站&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.examtopics.com/exams/eccouncil/312-50v11/view&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「Examtopics」-CEH-V11考題&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;，CEH考試的題目與答案均100%相同，故可以透過考古題方式快速準備，該網站的優點為下方有許多人的討論，可以幫助你判斷正確答案是甚麼。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/SkJ11Ibkp.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/SkJ11Ibkp.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;判斷正確答案之技巧：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;若大家投票=官方正確答案時–&amp;gt;該答案為正確答案&lt;/li&gt;
+&lt;li&gt;大家投票遠大於官方正確答案–&amp;gt;大家投票為正確答案&lt;/li&gt;
+&lt;li&gt;大家投票有多選項均為相同比例時–&amp;gt;至網路上Google找到詳細官方資訊來判斷哪個是正確答案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;該網站詳細的網址請參考文章末點，他免費資源開放到190題後就要付費才能觀看，但在這邊我們運用GoogleDorking的技巧，透過搜尋「exam 312-50v11 topic 1 question 題號 discussion inurl:discussions/eccouncil/view inurl:discussions/eccouncil/view」就可以繞過該網站的付費機制直接看到題目以及討論。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;範例：exam 312-50v11 topic 1 question 191 discussion inurl:discussions/eccouncil/view&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;透過上述網站，邊做題邊紀錄我總共做完了3次題目，每次做完題目後都會將錯誤題目再作答一次，如果又錯就會詳細看大家下方的解釋並且在網路上找答案。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/By2bDUZ1T.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/By2bDUZ1T.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;以上大概是我準備CEH的心得，希望能幫助到大家準備該考試。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接下來要準備CPENT了，希望一切順利~&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;參考資源&#34;&gt;參考資源：
+&lt;/h2&gt;&lt;p&gt;1.&lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/spreadsheets/d/11RKp8uWCUmSekHSXexOPa4nQGFJHIRIQ6kToHmYAkvc/edit?usp=sharing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;我的練習考古題紀錄&lt;/a&gt;
+2.Examtopics-CEH-V11考古題&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1~10題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/1&lt;/li&gt;
+&lt;li&gt;11~20題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/2&lt;/li&gt;
+&lt;li&gt;21~30題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/3&lt;/li&gt;
+&lt;li&gt;31~40題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/4&lt;/li&gt;
+&lt;li&gt;41~50題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/5&lt;/li&gt;
+&lt;li&gt;51~60題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/6&lt;/li&gt;
+&lt;li&gt;61~70題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/7&lt;/li&gt;
+&lt;li&gt;71~80題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/8&lt;/li&gt;
+&lt;li&gt;81~90題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/9&lt;/li&gt;
+&lt;li&gt;91~100題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/10&lt;/li&gt;
+&lt;li&gt;101~110題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/11&lt;/li&gt;
+&lt;li&gt;111~120題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/12&lt;/li&gt;
+&lt;li&gt;121~130題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/13&lt;/li&gt;
+&lt;li&gt;131~140題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/14&lt;/li&gt;
+&lt;li&gt;141~150題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/15&lt;/li&gt;
+&lt;li&gt;151~160題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/16&lt;/li&gt;
+&lt;li&gt;161~170題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/17&lt;/li&gt;
+&lt;li&gt;171~180題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/18&lt;/li&gt;
+&lt;li&gt;181~190題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/19&lt;/li&gt;
+&lt;li&gt;194題：https://www.examtopics.com/discussions/eccouncil/view/50380-exam-312-50v11-topic-1-question-194-discussion/&lt;/li&gt;
+&lt;li&gt;285題：https://www.examtopics.com/discussions/eccouncil/view/58483-exam-312-50v11-topic-1-question-285-discussion/&lt;/li&gt;
+&lt;li&gt;319題：https://www.examtopics.com/discussions/eccouncil/view/62890-exam-312-50v11-topic-1-question-319-discussion/&lt;/li&gt;
+&lt;li&gt;337題：https://www.examtopics.com/discussions/eccouncil/view/62963-exam-312-50v11-topic-1-question-337-discussion/&lt;/li&gt;
+&lt;li&gt;358題：https://www.examtopics.com/discussions/eccouncil/view/63038-exam-312-50v11-topic-1-question-358-discussion/&lt;/li&gt;
+&lt;li&gt;360題：https://www.examtopics.com/discussions/eccouncil/view/63041-exam-312-50v11-topic-1-question-360-discussion/&lt;/li&gt;
+&lt;li&gt;371題：https://www.examtopics.com/discussions/eccouncil/view/66614-exam-312-50v11-topic-1-question-371-discussion/&lt;/li&gt;
+&lt;li&gt;376題：https://www.examtopics.com/discussions/eccouncil/view/63092-exam-312-50v11-topic-1-question-376-discussion/&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
