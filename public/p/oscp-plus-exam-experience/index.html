@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文分享 OSCP+ 考試心得、準備方式以及考試資源，幫助考生順利通過 OSCP+ 認證。">
+<title>OSCP&#43;-如何&#34;一次&#34;通過OSCP&#43;考試-(含一點點CPENT、LPT心得)</title>
+
+<link rel='canonical' href='https://localhost:1313/p/oscp-plus-exam-experience/'>
+
+<link rel="stylesheet" href="/scss/style.min.bdc1157f346714aee56f7210360c7c912bf0a7fefc3b3f2bae07688bade15d78.css"><meta property='og:title' content="OSCP+-如何\"一次\"通過OSCP+考試-(含一點點CPENT、LPT心得)">
+<meta property='og:description' content="本文分享 OSCP+ 考試心得、準備方式以及考試資源，幫助考生順利通過 OSCP+ 認證。">
+<meta property='og:url' content='https://localhost:1313/p/oscp-plus-exam-experience/'>
+<meta property='og:site_name' content='KMYen'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OSCP&#43;' /><meta property='article:tag' content='資安考試' /><meta property='article:tag' content='滲透測試' /><meta property='article:tag' content='考試心得' /><meta property='article:published_time' content='2024-12-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-27T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="OSCP+-如何\"一次\"通過OSCP+考試-(含一點點CPENT、LPT心得)">
+<meta name="twitter:description" content="本文分享 OSCP+ 考試心得、準備方式以及考試資源，幫助考生順利通過 OSCP+ 認證。">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3bac01f0a30c4864.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🐉</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">KMYen</a></h1>
+            <h2 class="site-description">OSCP|LPT|CPENT|CEH|iPas</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/kmyen8763'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://localhost:1313/en/" >English</option>
+                                
+                                    <option value="https://localhost:1313/" selected>繁體中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>夜晚模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#個人背景">個人背景</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#學習到考過一年">學習到考過(一年)：</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#考試前">考試前：</a>
+      <ol>
+        <li><a href="#心得類">心得類：</a></li>
+        <li><a href="#oscp課程外工具">OSCP課程外工具</a>
+          <ol>
+            <li><a href="#建議學的">建議學的：</a></li>
+            <li><a href="#課程">課程</a></li>
+            <li><a href="#靶機表">靶機表：</a></li>
+            <li><a href="#cheatsheet參考">CheatSheet參考：</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#考試後">考試後：</a>
+      <ol>
+        <li><a href="#報告相關">報告相關：</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#cpentlpt人權圖">CPENT、LPT人權圖：</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/" >
+                資訊安全
+            </a>
+        
+            <a href="/categories/%E8%AD%89%E7%85%A7%E8%80%83%E8%A9%A6/" >
+                證照考試
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/oscp-plus-exam-experience/">OSCP&#43;-如何&#34;一次&#34;通過OSCP&#43;考試-(含一點點CPENT、LPT心得)</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本文分享 OSCP&#43; 考試心得、準備方式以及考試資源，幫助考生順利通過 OSCP&#43; 認證。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 27, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    閱讀時間: 6 分鐘
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="摘要">摘要：
+</h1><p>首先感謝<strong>科長、公司團隊</strong>讓我有這次的機會參加考試，也特別感謝<strong>不可思議的奇蹟、令姊、阿丸、瑩姊、Adam、Bo、schsu、yo豪、以及各個隊友</strong>在這段時間內的協助以及指導，可以說是沒有這些隊友，我不可能過這個考試，所以大家記得<del>推坑朋友一起花錢考(X)</del>
+由於網路上已經很多OSCP的考試說明已經在網路上很多了，所以本文主要針對OSCP+的感想以及準備的資源說明為主。</p>
+<h1 id="人權">人權：
+</h1><p><img src="https://hackmd.io/_uploads/S1BdJJhBke.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2024-12-27 16_03_31-Clipboard"
+	
+	
+></p>
+<h2 id="個人背景">個人背景
+</h2><p>因為每個人的能力背景不同，所以有講述個人背景的文章才有參考的價值，
+我是某國立大學的研究所資管所畢業，老實說只會寫簡單的Python，對於C語言等都不太熟悉，大概連腳本小子也不到的程度吧~
+主要工作也跟資訊領域也沒有太大的關係。純粹是有機會進到公司某PartTime性質的團隊，才有機會能跟一群夥伴們一起踏入這個領域去學習。
+而像是ChatGPT的出現，真的讓跨領域的學習門檻降低非常多，也鼓勵大家只要能跨出第一步，在這個AI的時代一定可以學到東西。</p>
+<h4 id="學習到考過一年">學習到考過(一年)：
+</h4><p>上課時間：2023-11(和團隊一起上課
+續約時間：2024-06(因為自認還沒準備好，再續約30天來延長考試時間
+考試日期：2024-11(剛好時間要到，而且改版OSCP+，下定決定考試(拒絕拖延症XD)</p>
+<h1 id="參考資源">參考資源：
+</h1><h2 id="考試前">考試前：
+</h2><h3 id="心得類">心得類：
+</h3><p>在考前都會擔心，甚至覺得自己準備的方向方式是否正確，因此可以多看別人的文章，來幫自己做心理建設。</p>
+<p><a class="link" href="https://eins.li/posts/oscp-secret-sauce/"  target="_blank" rel="noopener"
+    >揭露 OSCP 所有秘密！-2024-06-28</a>
+<a class="link" href="https://www.reddit.com/r/oscp/comments/1f5ojaq/assumed_breach_ad_what_you_may_need_to_know/"  target="_blank" rel="noopener"
+    >適應新考試：OSCP AD Assumed Breach 情境解析與準備指南-2024-08-31</a>
+<a class="link" href="https://warranty-v01d.pages.dev/posts/how-i-passed-the-oscp/"  target="_blank" rel="noopener"
+    >如何在半年內通過OSCP-2024-09-18</a>
+&ndash;&gt;這幾篇文章很清楚的解釋上課前的準備，以及考試的詳細過程，並且提供了多種工具，很推薦大家多看一下。
+<a class="link" href="https://www.youtube.com/watch?v=JAnC1DbjwVc"  target="_blank" rel="noopener"
+    >YouTube影片：Ultimate OSCP Guide 2024 - How To Pass The OSCP 2024-2024-05-10</a></p>
+<h3 id="oscp課程外工具">OSCP課程外工具
+</h3><h4 id="建議學的">建議學的：
+</h4><h5 id="掃描enumeration類">掃描(Enumeration)類：
+</h5><ol>
+<li><a class="link" href="https://github.com/Tib3rius/AutoRecon"  target="_blank" rel="noopener"
+    >Tib3rius/AutoRecon</a>
+&ndash;&gt;考試畢竟是跟時間競賽，所以推薦用這個，可以快速完成許多人工步驟，當然你必須先了解他在做甚麼，並且做不到甚麼，在考試中你才會下人工指令去做更詳細的掃描。</li>
+<li><a class="link" href="https://github.com/Pennyw0rth/NetExec"  target="_blank" rel="noopener"
+    >Pennyw0rth/NetExec: The Network Execution Tool</a>
+&ndash;&gt;在OSCP課程內學的是<a class="link" href="https://github.com/byt3bl33d3r/CrackMapExec"  target="_blank" rel="noopener"
+    >CrackMapExec</a>，但現在已經有更好用的NetExec，建議可以學一下怎麼使用，PS：但我考試時還是使用CrackMapExec</li>
+<li><a class="link" href="https://github.com/DominicBreuker/pspy"  target="_blank" rel="noopener"
+    >pspy</a>
+&ndash;&gt;由於考試跟課程中會有排程的題目，而要如何快速找出哪個是可以利用的排程，可以用這個，算是方便很多。</li>
+<li><a class="link" href="https://www.davila.me/menu/tools-of-the-trade/wpscan"  target="_blank" rel="noopener"
+    >wp-scan</a></li>
+<li><a class="link" href="https://eins.li/posts/make-your-own-wordlist/"  target="_blank" rel="noopener"
+    >建立自己的字典檔</a>
+&ndash;&gt;這篇文章蠻推薦的，畢竟自己常常會不確定字典黨會不會lost掉，建一個整合的就不會忘記</li>
+</ol>
+<h5 id="隧道tunneling類">隧道(Tunneling)類：
+</h5><ul>
+<li><a class="link" href="https://github.com/nicocha30/ligolo-ng"  target="_blank" rel="noopener"
+    >ligolo-ng</a>
+&ndash;&gt;在課程中，他會教你怎麼使用chisel，但是建議使用ligolo，因為他會向是建立VPN一樣做tunneling，變得很簡單。(<a class="link" href="https://www.youtube.com/watch?v=DM1B8S80EvQ&amp;t=20s&amp;pp=ygUJbGlnb2xvLW5n"  target="_blank" rel="noopener"
+    >教學影片-1</a>、<a class="link" href="https://www.youtube.com/watch?v=qou7shRlX_s&amp;pp=ygUJbGlnb2xvLW5n"  target="_blank" rel="noopener"
+    >教學影片-2</a>推薦吃飯做事時可以聽2，實際要操作在按照1的慢慢學)</li>
+</ul>
+<h5 id="其他other類">其他(other)類：
+</h5><ul>
+<li><a class="link" href="https://github.com/tmux/tmux"  target="_blank" rel="noopener"
+    >tmux</a>
+&ndash;&gt;在多台機器內妳可以很方便地進行管理和自訂你的控制台
+<a class="link" href="https://www.youtube.com/watch?v=Lqehvpe_djs&amp;pp=ygUEVE1VWA%3D%3D"  target="_blank" rel="noopener"
+    >教學影片</a><img src="https://hackmd.io/_uploads/ByyBVpoHye.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></li>
+</ul>
+<h4 id="課程">課程
+</h4><ul>
+<li><a class="link" href="https://referral.hackthebox.com/mzwErlC"  target="_blank" rel="noopener"
+    >HTB Academy邀請連結</a>
+&ndash;&gt;光靠OSCP裡面的課程，可能理解的不夠詳細，我會在Academy裡面在詳細去理解實際的運作以及指令怎麼下</li>
+</ul>
+<h4 id="靶機表">靶機表：
+</h4><ul>
+<li><a class="link" href="https://docs.google.com/spreadsheets/u/0/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/htmlview?pli=1"  target="_blank" rel="noopener"
+    >Lainkusanagi OSCP Like</a></li>
+<li><a class="link" href="https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit?gid=129517485#gid=129517485"  target="_blank" rel="noopener"
+    >NetSecFocus Trophy Room</a></li>
+<li><a class="link" href="https://wiki.vulnlab.com/intro/recommendations"  target="_blank" rel="noopener"
+    >vulnlab.com</a>
+&ndash;&gt;俗話說Practice Make Perfect，以上靶機推薦大家多練習。
+<img src="https://hackmd.io/_uploads/HyTAmiirJl.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></li>
+</ul>
+<h4 id="cheatsheet參考">CheatSheet參考：
+</h4><ul>
+<li><a class="link" href="https://aditya-3.gitbook.io/oscp"  target="_blank" rel="noopener"
+    >aditya-3.gitbook.io/oscp</a>
+&ndash;&gt;建立自己的CheatSheet or MindMap很重要，你可以快速知道自己做了甚麼或甚麼還沒做。
+&ndash;&gt;Google還會有很多CheatSheet可以參考，最重要的是<strong>Make your OWN CheatSheet or MindMap</strong>.</li>
+</ul>
+<h2 id="考試後">考試後：
+</h2><h3 id="報告相關">報告相關：
+</h3><ul>
+<li><a class="link" href="https://help.offsec.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements"  target="_blank" rel="noopener"
+    >官方報告規格</a></li>
+<li><a class="link" href="https://www.youtube.com/watch?v=8Biyy8B5maw"  target="_blank" rel="noopener"
+    >報告撰寫影片</a>
+<img src="https://hackmd.io/_uploads/HJZ3rajSkg.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></li>
+</ul>
+<h1 id="其他qa">其他QA：
+</h1><p>Q：OSCP+的加分算變難or變簡單?
+A：因為AD不用Initial Access了(直接給帳密)，而且提權的方式很簡單。所以10分算是送你的，而且每台都有分數。
+Q：OSCP教的是甚麼？
+A：在OSCP的課程裡面會教你如何像是打撲克牌一樣，照某種套路(MindMap)，對每一個可能的方式都去嘗試(Try Harder)，就可以打穿。所以重點是你如何透過他的課程來建立自己的MindMap。</p>
+<p>Q：CPENT跟OSCP的差異？
+A：先上圖，最近剛上日麻的雀豪，請容我用雀魂的段位或是LOL英雄聯盟的段位來做說明
+<img src="https://hackmd.io/_uploads/Hy-_UpiBJg.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+>
+老實說，CPENT跟OSCP算是截然不同的考試，CPENT模擬一個企業環境你要在裡面找到你的目標靶機來打，但難度不會太高，OSCP則是給你確定的機器要你取得RCE，用遊戲段未來形容的話，CPENT有點像是大草原上面有好幾個牌桌(英雄聯盟則是段位場)，你要在裡面找到你要打的那幾張牌桌，而對手的水平大概是銅牌場的水準。而在OSCP則是確實的給你牌桌(3台StandAlone，1組AD)你要靠你所學的打牌理論打贏這幾場牌桌(水準大概在金之間，金牌場左右)，以上是我的體感。
+<strong>CPENT be Like：</strong>(難度在於你要找到你要打哪幾桌)
+<img src="https://hackmd.io/_uploads/HJJ1uaiHke.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2024-12-27 14_23_07-Clipboard"
+	
+	
+>
+<strong>OSCP be Like：</strong>(難度在於你學會招數，照著理論打通，不難但你要都知道)
+<img src="https://hackmd.io/_uploads/SJoxFpjSye.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2024-12-27 14_26_45-Clipboard"
+	
+	
+></p>
+<p>Q：其他QA
+A：歡迎留言或加我LINE討論(lazycpumis)</p>
+<h3 id="cpentlpt人權圖">CPENT、LPT人權圖：
+</h3><p><img src="https://hackmd.io/_uploads/HyW5tTjSke.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2024-12-27 14_29_12-Clipboard"
+	
+	
+></p>
+<h1 id="記得oscpcpentlpt只是開始">記得OSCP、CPENT、LPT只是開始&hellip;&hellip;
+</h1><p><a class="link" href="https://youtu.be/6-05YGBR-Hw?si=v-MglVle123N2TDn"  target="_blank" rel="noopener"
+    >Offsec_Rank #OSCP #OSCE #OSEE</a>
+<img src="https://hackmd.io/_uploads/HJZKsasSyl.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
+<h1 id="最後學累了就聽歌休息吧人生還有很多有趣的事情加油">最後學累了就聽歌休息吧，人生還有很多有趣的事情，加油
+</h1><p><a class="link" href="https://www.offsec.com/offsec/say-try-harder/"  target="_blank" rel="noopener"
+    >https://www.offsec.com/offsec/say-try-harder/</a>
+<img src="https://hackmd.io/_uploads/ryukH6oB1g.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">現在聽好了！
+</span></span><span class="line"><span class="cl">這首獻給所有完成 Offsec 認證的人，
+</span></span><span class="line"><span class="cl">那些不動搖、不猶豫的人，
+</span></span><span class="line"><span class="cl">那些更加努力、變得更勇敢的人！
+</span></span><span class="line"><span class="cl">你們不能失敗，不能讓這成為一場空，
+</span></span><span class="line"><span class="cl">你必須更加努力！
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Offsec 說要更努力！
+</span></span><span class="line"><span class="cl">這是取得你的 OSCP 的唯一方法
+</span></span><span class="line"><span class="cl">你必須比你想像的更努力
+</span></span><span class="line"><span class="cl">因為那是 Offsec 的哲學！ X 2
+</span></span><span class="line"><span class="cl">把頭猛敲在桌子上
+</span></span><span class="line"><span class="cl">不敢相信自己陷入如此困境
+</span></span><span class="line"><span class="cl">深陷在 Offsec 滲透測試的六英尺深
+</span></span><span class="line"><span class="cl">當你在隧道中穿梭和轉向，像挖土一樣撞到地面
+</span></span><span class="line"><span class="cl">痛苦和忍耐，孩子，你說你知道它，你活在其中！
+</span></span><span class="line"><span class="cl">但你必須打破自己的极限
+</span></span><span class="line"><span class="cl">當你想要放棄，只要說放棄吧，就放棄吧，
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">說 Bob，我真的不明白，答案是什麼？
+</span></span><span class="line"><span class="cl">他說“忘了吧孩子，這是 Offsec，你必須適應它”。
+</span></span><span class="line"><span class="cl">你想成為巨人還是侏儒，
+</span></span><span class="line"><span class="cl">你想成為 Offsec 認證者還是在外面開發小工具，
+</span></span><span class="line"><span class="cl">抬起頭，把手指放在那些數字上
+</span></span><span class="line"><span class="cl">我們這裡有句話，
+</span></span><span class="line"><span class="cl">我們呼吸它，我們活在其中，那就是
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Tricia 那惡毒的女人她在你面前大笑！
+</span></span><span class="line"><span class="cl">你在網絡空間被謙卑的人羞辱！
+</span></span><span class="line"><span class="cl">這條路像馬拉松一樣長，不是短短的 50 米賽跑
+</span></span><span class="line"><span class="cl">不想墜落不想失敗不想失去恩典！
+</span></span><span class="line"><span class="cl">24 小時的測試，想把頭放在枕頭上 –
+</span></span><span class="line"><span class="cl">但你現在不能放棄，這是你必須擁抱的挑戰！
+</span></span><span class="line"><span class="cl">坐直，用那些好牙膏刷牙
+</span></span><span class="line"><span class="cl">做一些伏地挺身，喝些咖啡，在臉上潑冷水....
+</span></span><span class="line"><span class="cl">然後重新回到比賽中，
+</span></span><span class="line"><span class="cl">讓世界知道你的名字
+</span></span><span class="line"><span class="cl">那 Offsec 認證是黑客名人堂
+</span></span><span class="line"><span class="cl">這是無盡的讚揚，所以恢復你的信心，
+</span></span><span class="line"><span class="cl">你已經走了這麼遠，現在停下來只會
+</span></span><span class="line"><span class="cl">成為一個巨大的遺憾
+</span></span><span class="line"><span class="cl">你必須拋棄所有疑慮
+</span></span><span class="line"><span class="cl">這考試你不能失敗
+</span></span><span class="line"><span class="cl">你也不能停止，所以
+</span></span><span class="line"><span class="cl">像 Suey，你必須剁碎它！
+</span></span><span class="line"><span class="cl">像地板，你必須擦乾淨它！
+</span></span><span class="line"><span class="cl">像 Woodstock，你必須搖滾它！
+</span></span><span class="line"><span class="cl">振作起來，只要更努力。
+</span></span><span class="line"><span class="cl">我告訴你，你能做到。
+</span></span><span class="line"><span class="cl">更努力，更努力，更努力，更努力...
+</span></span><span class="line"><span class="cl">生命如此短暫，所以要全力以赴，你得做到
+</span></span><span class="line"><span class="cl">這次滲透測試只是未來事情的一個範例
+</span></span><span class="line"><span class="cl">生命如此短暫，在你的生活中你必須得到一些……
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/oscp&#43;/">OSCP&#43;</a>
+        
+            <a href="/tags/%E8%B3%87%E5%AE%89%E8%80%83%E8%A9%A6/">資安考試</a>
+        
+            <a href="/tags/%E6%BB%B2%E9%80%8F%E6%B8%AC%E8%A9%A6/">滲透測試</a>
+        
+            <a href="/tags/%E8%80%83%E8%A9%A6%E5%BF%83%E5%BE%97/">考試心得</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相關文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ceh-v11-exam-experience/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CEH-V11 考試心得 &amp; 題庫資源分享</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ipas-security-engineer-exam-prep/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iPAS 資訊安全工程師-中級 12天準備歷程記錄 &amp; 考古題資源提供</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2025 By KMYen
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

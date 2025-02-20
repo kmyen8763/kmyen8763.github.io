@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>網路安全 on KMYen</title>
+        <link>https://localhost:1313/tags/%E7%B6%B2%E8%B7%AF%E5%AE%89%E5%85%A8/</link>
+        <description>Recent content in 網路安全 on KMYen</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>By KMYen</copyright>
+        <lastBuildDate>Sat, 12 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://localhost:1313/tags/%E7%B6%B2%E8%B7%AF%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CEH-V11 考試心得 &amp; 題庫資源分享</title>
+        <link>https://localhost:1313/p/ceh-v11-exam-experience/</link>
+        <pubDate>Sat, 12 Aug 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://localhost:1313/p/ceh-v11-exam-experience/</guid>
+        <description>&lt;h1 id=&#34;ceh-v11-考試心得題庫資源分享&#34;&gt;CEH-V11-考試心得&amp;amp;題庫資源分享
+&lt;/h1&gt;&lt;h2 id=&#34;考試成績124125&#34;&gt;考試成績：124/125
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/By_N2SZyT.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/By_N2SZyT.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;PS:敗在IOT Seeker那題，當時在思考是IOT Inspector還是IOT Seeker，如果是我自己應該會用IOT Inspector聽起來比較厲害。&lt;/p&gt;
+&lt;h2 id=&#34;心得&#34;&gt;心得
+&lt;/h2&gt;&lt;p&gt;一直以來對資安這一塊有興趣但又不知道怎麼入門，剛好有幸能有研究所朋友推坑，一起花了五六萬塊來上CEH的課程，整體課程僅有5天(可重聽一次但我沒去)，上完其實能得到的收穫不多，事後發現這一門領域還是要靠自己去學習。&lt;/p&gt;
+&lt;p&gt;近期便買了「HTB Academy」來玩，真的學到蠻多的，在準備Nmap的題目時候「HTB Academy」裡面有一個Module(如下圖)透過裡面實際操作學習後，可以把很多題目變成不是死背而是真的利用到知道怎樣用，非常推薦準備考試的人可以使用(裡面有許多免費課程，可以先從免費的用了之後覺得喜歡再考慮購買)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/HJG60BW1T.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/HJG60BW1T.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/Bko5kI-kT.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/Bko5kI-kT.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;準備方式&#34;&gt;準備方式：
+&lt;/h2&gt;&lt;p&gt;由於我比較懶惰，所以從去年上完課程後只有少數時間做做考古題，有友人大神做了google表單版本的考古題，但Google表單的缺點是我考完400題目後才能確認答不不不之案以及我不能確認答案是否正確(CEH有許多官方答案是錯誤的)&lt;/p&gt;
+&lt;p&gt;因此後來找到一個網站&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.examtopics.com/exams/eccouncil/312-50v11/view&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「Examtopics」-CEH-V11考題&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;，CEH考試的題目與答案均100%相同，故可以透過考古題方式快速準備，該網站的優點為下方有許多人的討論，可以幫助你判斷正確答案是甚麼。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/SkJ11Ibkp.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/SkJ11Ibkp.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;判斷正確答案之技巧：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;若大家投票=官方正確答案時–&amp;gt;該答案為正確答案&lt;/li&gt;
+&lt;li&gt;大家投票遠大於官方正確答案–&amp;gt;大家投票為正確答案&lt;/li&gt;
+&lt;li&gt;大家投票有多選項均為相同比例時–&amp;gt;至網路上Google找到詳細官方資訊來判斷哪個是正確答案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;該網站詳細的網址請參考文章末點，他免費資源開放到190題後就要付費才能觀看，但在這邊我們運用GoogleDorking的技巧，透過搜尋「exam 312-50v11 topic 1 question 題號 discussion inurl:discussions/eccouncil/view inurl:discussions/eccouncil/view」就可以繞過該網站的付費機制直接看到題目以及討論。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;範例：exam 312-50v11 topic 1 question 191 discussion inurl:discussions/eccouncil/view&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;透過上述網站，邊做題邊紀錄我總共做完了3次題目，每次做完題目後都會將錯誤題目再作答一次，如果又錯就會詳細看大家下方的解釋並且在網路上找答案。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hackmd.io/_uploads/By2bDUZ1T.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;https://hackmd.io/_uploads/By2bDUZ1T.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;以上大概是我準備CEH的心得，希望能幫助到大家準備該考試。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接下來要準備CPENT了，希望一切順利~&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;參考資源&#34;&gt;參考資源：
+&lt;/h2&gt;&lt;p&gt;1.&lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/spreadsheets/d/11RKp8uWCUmSekHSXexOPa4nQGFJHIRIQ6kToHmYAkvc/edit?usp=sharing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;我的練習考古題紀錄&lt;/a&gt;
+2.Examtopics-CEH-V11考古題&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1~10題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/1&lt;/li&gt;
+&lt;li&gt;11~20題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/2&lt;/li&gt;
+&lt;li&gt;21~30題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/3&lt;/li&gt;
+&lt;li&gt;31~40題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/4&lt;/li&gt;
+&lt;li&gt;41~50題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/5&lt;/li&gt;
+&lt;li&gt;51~60題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/6&lt;/li&gt;
+&lt;li&gt;61~70題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/7&lt;/li&gt;
+&lt;li&gt;71~80題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/8&lt;/li&gt;
+&lt;li&gt;81~90題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/9&lt;/li&gt;
+&lt;li&gt;91~100題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/10&lt;/li&gt;
+&lt;li&gt;101~110題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/11&lt;/li&gt;
+&lt;li&gt;111~120題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/12&lt;/li&gt;
+&lt;li&gt;121~130題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/13&lt;/li&gt;
+&lt;li&gt;131~140題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/14&lt;/li&gt;
+&lt;li&gt;141~150題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/15&lt;/li&gt;
+&lt;li&gt;151~160題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/16&lt;/li&gt;
+&lt;li&gt;161~170題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/17&lt;/li&gt;
+&lt;li&gt;171~180題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/18&lt;/li&gt;
+&lt;li&gt;181~190題：https://www.examtopics.com/exams/eccouncil/312-50v11/view/19&lt;/li&gt;
+&lt;li&gt;194題：https://www.examtopics.com/discussions/eccouncil/view/50380-exam-312-50v11-topic-1-question-194-discussion/&lt;/li&gt;
+&lt;li&gt;285題：https://www.examtopics.com/discussions/eccouncil/view/58483-exam-312-50v11-topic-1-question-285-discussion/&lt;/li&gt;
+&lt;li&gt;319題：https://www.examtopics.com/discussions/eccouncil/view/62890-exam-312-50v11-topic-1-question-319-discussion/&lt;/li&gt;
+&lt;li&gt;337題：https://www.examtopics.com/discussions/eccouncil/view/62963-exam-312-50v11-topic-1-question-337-discussion/&lt;/li&gt;
+&lt;li&gt;358題：https://www.examtopics.com/discussions/eccouncil/view/63038-exam-312-50v11-topic-1-question-358-discussion/&lt;/li&gt;
+&lt;li&gt;360題：https://www.examtopics.com/discussions/eccouncil/view/63041-exam-312-50v11-topic-1-question-360-discussion/&lt;/li&gt;
+&lt;li&gt;371題：https://www.examtopics.com/discussions/eccouncil/view/66614-exam-312-50v11-topic-1-question-371-discussion/&lt;/li&gt;
+&lt;li&gt;376題：https://www.examtopics.com/discussions/eccouncil/view/63092-exam-312-50v11-topic-1-question-376-discussion/&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
